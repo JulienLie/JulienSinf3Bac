@@ -12,22 +12,32 @@ public class GlobalWarmingImpl extends GlobalWarming {
     System.out.println(gw.nbSafePoints(2));
   }
 
-  private final LinkedList<Integer> list;
+  private final TreeMap<Integer> list;
 
     public GlobalWarmingImpl(int[][] altitude) {
         super(altitude);
-        list = new LinkedList<>();
+        list = new TreeMap<>();
         for(int[] tab : altitude){
           for(int i : tab){
-            list.add(i);
+            Integer nbr = list.get(i);
+            if(nbr == null){
+              list.put(i, 1);
+            }
+            else{
+              list.replace(i, nbr+1);
+            }
           }
         }
     }
 
 
     public int nbSafePoints(int waterLevel) {
-        
-        return sub.size();
+        SortedMap<Integer> sub = list.headMap(waterLevel);
+        int sum = 0;
+        for(Integer i : sub.values()){
+          sum += i;
+        }
+        return sum;
     }
 
 }
