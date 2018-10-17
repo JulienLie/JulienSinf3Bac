@@ -1,0 +1,29 @@
+3.1.1:
+  binary -> meilleur search
+
+3.1.2:
+  public E floor(E e){
+    int mid = this.size()/2;
+    for(int i = 4; true; i+=2){
+      if(mid == 0){
+        return null;
+      }
+      else if(mid == this.size()-1){
+        return key[mid];
+      }
+      else if(e == keys[mid]){
+        return keys[mid];
+      }
+      else if(keys[mid-1] < e && keys[mid+1] > e){
+        return keys[mid-1];
+      }
+      else if(keys[mid] > e){
+        mid += this.size()/i;
+      }
+      else{
+       mid -= this.size()/i;
+      }
+    }
+  }
+
+3.1.3:
