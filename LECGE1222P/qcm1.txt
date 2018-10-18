@@ -1,0 +1,10 @@
+Q1: Transitive et complete
+Q2: bien normal
+Q3: f²
+Q4: Utilité constante
+Q5: contrainte budgetaire
+Q6: 10
+Q7: ne prefere pas strictement londres a paris
+Q8: 0
+Q9: Faux
+Q10: Vrai
