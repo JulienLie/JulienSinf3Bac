@@ -1,10 +1,12 @@
+package S5;
+
 public class BinarySearchST<K extends Comparable<K>, E>{
 
-  int size;
-  K[] keys;
-  E[] elems;
-  K lastKey;
-  int lastIndex;
+  private int size;
+  private K[] keys;
+  private E[] elems;
+  private K lastKey;
+  private int lastIndex;
 
   public BinarySearchST(){
       this(2);
@@ -53,6 +55,7 @@ public class BinarySearchST<K extends Comparable<K>, E>{
   }
 
   private int findPos(K key){
+    if(key == this.lastKey) return lastIndex;
     if (key == null) throw new IllegalArgumentException("argument to rank() is null");
 
         int lo = 0, hi = size-1;
@@ -79,7 +82,8 @@ public class BinarySearchST<K extends Comparable<K>, E>{
   }
 
   public K floor(K key){
-    
+    int pos = this.findPos(key);
+    return keys[pos] == key ? keys[pos] : keys[pos-1];
   }
 
   private void resize(int size){
