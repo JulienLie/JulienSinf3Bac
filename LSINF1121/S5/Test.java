@@ -23,6 +23,7 @@ public class Test{
     Personne p2 = new Personne("Terrieur", "Alain", 42);
     Personne p3 = new Personne("Terrieur", "Alex", 69);
     BinarySearchST<Integer, Personne> bs = new BinarySearchST<>();
+    SequentialSearchST<Integer, Personne> ss = new SequentialSearchST<>();
 //     System.out.println(bs);
 //     bs.put(1, p1);
 //     System.out.println(bs);
@@ -39,12 +40,14 @@ public class Test{
      for(int i = 0; i < 10000; i++){
          if(i != 568) {
              Personne p = new Personne(randomName(10), randomName(4), (int) (Math.random() * 100));
+             ss.put(i, p);
              bs.put(i, p);
-             System.out.println(p);
+             //System.out.println(p);
          }
      }
-     System.out.println(bs);
-     System.out.println(bs.floor(568));
+     for(int i = 0; i < 10000-1; i++){
+       System.out.println(bs.get(i) + "|" + ss.get(i));
+     }
 //    String find = "julien";
 //    long time = System.currentTimeMillis();
 //    String nom = randomName(find.length());
