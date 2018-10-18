@@ -78,6 +78,10 @@ public class BinarySearchST<K extends Comparable<K>, E>{
     return true;
   }
 
+  public K floor(K key){
+    
+  }
+
   private void resize(int size){
     if(this.keys.length == size) return;
     K[] bufK = (K[]) new Comparable[size];
