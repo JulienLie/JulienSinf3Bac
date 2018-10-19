@@ -1,5 +1,3 @@
-package S5;
-
 public class InterpolationSearchST<K extends Double, E> extends BinarySearchST<Double, E> {
 
     public InterpolationSearchST(){

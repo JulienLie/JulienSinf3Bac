@@ -51,6 +51,7 @@ public class Test{
      for(int i = 0; i < 10000-1; i++){
        System.out.println(bs.get(i) + "|" + ss.get(i) + "|" + bst.get(i));
      }
+     // System.out.println(BinarySearchTreeST.isBST(bst));
 //    String find = "julien";
 //    long time = System.currentTimeMillis();
 //    String nom = randomName(find.length());
