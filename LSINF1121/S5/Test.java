@@ -1,4 +1,4 @@
-package S5;
+import java.util.Random;
 
 public class Test{
 
@@ -24,6 +24,7 @@ public class Test{
     Personne p3 = new Personne("Terrieur", "Alex", 69);
     BinarySearchST<Integer, Personne> bs = new BinarySearchST<>();
     SequentialSearchST<Integer, Personne> ss = new SequentialSearchST<>();
+    BinarySearchTreeST<Integer, Personne> bst = new BinarySearchTreeST<>();
 //     System.out.println(bs);
 //     bs.put(1, p1);
 //     System.out.println(bs);
@@ -37,16 +38,18 @@ public class Test{
 //     System.out.println(p2);
 //     p3 = bs.get(3);
 //     System.out.println(p3);
+      Random r = new Random();
      for(int i = 0; i < 10000; i++){
          if(i != 568) {
-             Personne p = new Personne(randomName(10), randomName(4), (int) (Math.random() * 100));
+             Personne p = new Personne(randomName(r.nextInt(5) + 5), randomName(r.nextInt(3) + 5), r.nextInt(120));
              ss.put(i, p);
              bs.put(i, p);
+             bst.put(i, p);
              //System.out.println(p);
          }
      }
      for(int i = 0; i < 10000-1; i++){
-       System.out.println(bs.get(i) + "|" + ss.get(i));
+       System.out.println(bs.get(i) + "|" + ss.get(i) + "|" + bst.get(i));
      }
 //    String find = "julien";
 //    long time = System.currentTimeMillis();
@@ -64,7 +67,7 @@ public class Test{
   }
 
   private static String randomName(int size){
-    java.util.Random ran = new java.util.Random();
+    Random ran = new Random();
     String lettres = "aertuiopsdfghjlmcvbny";
     String out = "";
     for(int i = 0; i < size; i++){
