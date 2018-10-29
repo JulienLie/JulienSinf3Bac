@@ -12,52 +12,42 @@ public class Union{
     Interval i6 = new Interval(1, 3);
     Interval[] in = new Interval[]{i0, i1, i2, i3, i4, i5, i6};
     Interval[] inter = union(in);
-    Interval[] inter2 = unionMerge(in);
-    if(inter.length != inter2.length){
-      System.out.println("Pas la meme taille " + inter.length + " " + inter2.length);
-    }
+    //Interval[] inter2 = unionMerge(in);
+    // if(inter.length != inter2.length){
+    //   System.out.println("Pas la meme taille " + inter.length + " " + inter2.length);
+    // }
     for(Interval i : inter){
       System.out.print(i);
     }
     System.out.println();
-    for(Interval i : inter2){
-      System.out.print(i);
-    }
+    // for(Interval i : inter2){
+    //   System.out.print(i);
+    // }
     System.out.println();
   }
 
     public static Interval[] union(Interval[] intervals){
-        if(intervals.length == 0){
-            return new Interval[]{};
-        }
-        Arrays.sort(intervals); // nlog n
-        for(Interval i : intervals){ // n
+        if(intervals.length == 0) return new Interval[0];
+        Arrays.sort(intervals);
+        for(Interval i : intervals){
           System.out.print(i);
         }
         System.out.println();
-        LinkedList<Interval> newInter = new LinkedList<>(Arrays.asList(intervals)); // 1
-        for(int i = 0; i < newInter.size()-1; i++){ // O(n)
-          Interval cur = newInter.get(i); // n
-          Interval next = newInter.get(i+1); // n
-          //System.out.printf("Check %s avec %s ", cur, next);
-          if(next.min <= cur.max){
-            if(cur.max >= next.max){
-              //System.out.println("donc on remove " + next);
-              newInter.remove(i+1); // n
-              i--;
+        int min = intervals[0].min;
+        int max = intervals[0].max;
+        LinkedList<Interval> list = new LinkedList<>();
+        for(int i = 1; i < intervals.length; i++){
+            if(intervals[i].min > max){
+                list.add(new Interval(min, max));
+                min = intervals[i].min;
+                max = intervals[i].max;
             }
             else{
-              newInter.remove(i); // n
-              newInter.remove(i); // n
-              Interval toAdd = new Interval(cur.min, next.max);
-              //System.out.println("et ca donne " + toAdd);
-              newInter.add(i, toAdd); // n
-              i--;
+                max = intervals[i].max;
             }
-          }
-          //else System.out.println("et y'a rien a faire");
         }
-        return newInter.toArray(new Interval[]{});
+        list.add(new Interval(min, max));
+        return list.toArray(new Interval[0]);
     }
 
     public static Interval[] unionMerge(Interval[] intervals){
@@ -88,7 +78,7 @@ public class Union{
         buf[i] = list.remove(0);
       }
       int l = 0;
-      int r = mid+1; 
+      int r = mid+1;
       while(l <= mid || r < list.size()){
         if(l > mid){
           list.add(pos++, buf[r++]);
