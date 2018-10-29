@@ -1,0 +1,3 @@
+[submodule "LSINF1311/LargeUI"]
+	path = LSINF1311/LargeUI
+	url = https://github.com/LargeUserInterface/LargeUI.git
