@@ -2,9 +2,9 @@ class BinarySearchTreeImpl{
 
   private class Node{
     int value;
-    Node left, rigth;
+    Node left, right;
 
-    private Node(value){
+    private Node(int value){
       this.value = value;
       this.left = null;
       this.right = null;
