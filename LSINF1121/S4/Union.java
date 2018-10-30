@@ -1,4 +1,4 @@
-x²x²import java.util.*;
+import java.util.*;
 
 public class Union{
 

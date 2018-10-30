@@ -1,5 +1,3 @@
-package S4;
-
 public class Interval implements Comparable<Interval> {
 
     final int min, max;

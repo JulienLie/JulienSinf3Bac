@@ -1,0 +1,11 @@
+O(log n) et O(n)
+O(log n)
+O(n)
+Selection sort n'est pas stable et en place
+3-way quick sort n'est pas stable et en place
+Merge sort est stable et pas en place
+
+      4
+  2       7
+1   3   6   8
+        5
