@@ -1,4 +1,5 @@
 *.class
 .idea/*
 ./compiled/*
-LSINF1121/*/.idea/*
+LSINF1121/.idea/*
+LSINF1121/build/*
