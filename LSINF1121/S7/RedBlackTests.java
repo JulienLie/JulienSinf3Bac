@@ -1,3 +1,5 @@
+package S7;
+
 import org.junit.Test;
 
 import java.util.ConcurrentModificationException;

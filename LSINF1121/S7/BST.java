@@ -1,3 +1,5 @@
+package S7;
+
 import java.util.*;
 
    public class BST<Key extends Comparable<Key>, Value> implements Iterable<Key> {

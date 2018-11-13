@@ -1,3 +1,5 @@
+package S7;
+
 class BinarySearchTreeImpl{
 
   private class Node{

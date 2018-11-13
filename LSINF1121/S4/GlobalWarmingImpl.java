@@ -1,3 +1,5 @@
+package S4;
+
 import java.util.*;
 
 public class GlobalWarmingImpl extends GlobalWarming {

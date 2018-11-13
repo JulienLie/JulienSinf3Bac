@@ -1,3 +1,7 @@
+package S5;
+
+import S5.BinarySearchST;
+
 import java.util.Random;
 
 public class Test{

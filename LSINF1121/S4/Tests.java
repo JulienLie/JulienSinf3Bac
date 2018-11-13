@@ -1,3 +1,5 @@
+package S4;
+
 import java.util.Random;
 
 public class Tests {

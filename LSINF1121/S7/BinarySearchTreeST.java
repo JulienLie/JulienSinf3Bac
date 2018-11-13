@@ -1,23 +1,23 @@
-package S5;
+package S7;
+
+import S5.ST;
 
 import java.util.List;
 import java.util.LinkedList;
 
-public class BinarySearchTreeST<K extends Comparable<K>, E> implements ST<K, E>{
+public class BinarySearchTreeST<K extends Comparable<K>, E> implements ST<K, E> {
 
-  protected class Node{
+  private class Node{
     K key;
     E elem;
     Node left;
     Node right;
-    boolean isRed;
 
-    public Node(K key, E elem){
+    Node(K key, E elem){
       this.key = key;
       this.elem = elem;
       this.left = null;
       this.right = null;
-      this.isRed = false;
     }
   }
 

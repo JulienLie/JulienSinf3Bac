@@ -1,8 +1,10 @@
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.NoSuchElementException;
+package S7;
 
-public class MyRedBlack<Key extends Comparable<Key>, Value> implements RedBlack<Key, Value>{
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+import java.util.Queue;
+
+public class MyRedBlack<Key extends Comparable<Key>, Value> implements RedBlack<Key, Value> {
 
     private Node root;     // root of the BST
 

@@ -1,3 +1,7 @@
+package S7.LSINF1121_PART3_UnitTestsRedBlackTree.src.test.java;
+
+import S7.LSINF1121_PART3_UnitTestsRedBlackTree.src.main.java.MyRedBlack;
+import S7.LSINF1121_PART3_UnitTestsRedBlackTree.src.main.java.RedBlack;
 import org.junit.Test;
 
 import java.util.ConcurrentModificationException;

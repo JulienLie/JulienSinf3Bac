@@ -1,3 +1,5 @@
+package S7;
+
 import java.util.NoSuchElementException;
 
 

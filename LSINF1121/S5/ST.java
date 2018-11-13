@@ -1,3 +1,5 @@
+package S5;
+
 public interface ST<K extends Comparable<K>, E>{
 
     void put(K key, E elem);
