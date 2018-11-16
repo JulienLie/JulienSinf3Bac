@@ -19,16 +19,16 @@ public class RabinKarp
 
     public RabinKarp(String[] pat)
     {
-        this.pat = new HashSet<>(); // save pattern (only needed for Las Vegas)
-        this.patHash = new HashSet<>();
+        this.pat = new HashSet<>(pat.length); // save pattern (only needed for Las Vegas)
+        this.patHash = new HashSet<>(pat.length);
         this.M = pat[0].length();
         Q = 4463;
         RM = 1;
         for (int i = 1; i <= M-1; i++) // Compute R^(M-1) % Q for use
             RM = (R * RM) % Q; // in removing leading digit.
-        for(String aPat : pat) {
-            this.pat.add(aPat);
-            this.patHash.add(hash(aPat, M));
+        for(String aPat : pat) { // O(L) => O(L*M)
+            this.pat.add(aPat); // O(M)
+            this.patHash.add(hash(aPat, M)); // O(M)
         }
     }
 
