@@ -1,9 +1,12 @@
 package S9;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 public class RabinKarp
 {
-    private String pat[]; // pattern (only needed for Las Vegas)
-    private long patHash[]; // pattern hash value
+    private HashSet<String> pat; // patterns (only needed for Las Vegas)
+    private HashSet<Long> patHash; // patterns hash values
     private int M; // pattern length
     private long Q; // a large prime
     private int R = 2048; // alphabet size
@@ -11,31 +14,27 @@ public class RabinKarp
 
     public RabinKarp(String pat)
     {
-        this.pat = new String[]{pat}; // save pattern (only needed for Las Vegas)
-        this.M = this.pat[0].length();
-        Q = 4463;
-        RM = 1;
-        for (int i = 1; i <= M-1; i++) // Compute R^(M-1) % Q for use
-            RM = (R * RM) % Q; // in removing leading digit.
-        patHash = new long[]{hash(pat, M)};
+        this(new String[]{pat});
     }
 
     public RabinKarp(String[] pat)
     {
-        this.pat = pat; // save pattern (only needed for Las Vegas)
+        this.pat = new HashSet<>(); // save pattern (only needed for Las Vegas)
+        this.patHash = new HashSet<>();
         this.M = pat[0].length();
         Q = 4463;
         RM = 1;
         for (int i = 1; i <= M-1; i++) // Compute R^(M-1) % Q for use
             RM = (R * RM) % Q; // in removing leading digit.
-        patHash = new long[pat.length];
-        for(int i = 0; i < patHash.length; i++)
-            patHash[i] = hash(pat[i], M);
+        for(String aPat : pat) {
+            this.pat.add(aPat);
+            this.patHash.add(hash(aPat, M));
+        }
     }
 
 
-    public boolean check(int i,String txt, int pos){ // Monte Carlo (see text)
-        return pat[pos].equals(txt.substring(i, i + M));
+    public boolean check(int i,String txt){ // Monte Carlo (see text.)
+        return this.pat.contains(txt.substring(i, i + M)); // O(M)
     } // For Las Vegas, check pat vs txt(i..i-M+1).
 
     private long hash(String key, int M){ // Compute hash for key[0..M-1].
@@ -46,20 +45,18 @@ public class RabinKarp
     }
 
 
-    public int search(String txt)
-    { // Search for hash match in text.
-        int N = txt.length();
-        long txtHash = hash(txt, M);
-        for(Long l : patHash)
-            if (l == txtHash) return 0; // Match at beginning.
-        for (int i = M; i < N; i++)
+    public int search(String txt) // O(N*M)
+    { // Search for hash match in text
+        int N = txt.length(); // O(1)
+        long txtHash = hash(txt, M); // O(M)
+        if (patHash.contains(txtHash)) return 0; // Match at beginning. O(1)
+        for (int i = M; i < N; i++) // O(N)
         { // Remove leading digit, add trailing digit, check for match.
-            txtHash = (txtHash + Q - RM*txt.charAt(i-M) % Q) % Q;
-            txtHash = (txtHash*R + txt.charAt(i)) % Q;
-            for(int j = 0; j < patHash.length; j++)
-                if (patHash[j] == txtHash)
-                    if (check(i - M + 1,txt, j)) return i - M + 1; // match
+            txtHash = (txtHash + Q - RM*txt.charAt(i-M) % Q) % Q; // O(1)
+            txtHash = (txtHash*R + txt.charAt(i)) % Q; // O(1)
+            if (patHash.contains(txtHash)) // O(1)
+                if (check(i - M + 1,txt)) return i - M + 1; // match O(M)
         }
-        return N; // no match found
+        return N; // no match found O(1)
     }
 }

@@ -14,8 +14,11 @@ public class RabinKarpTest {
     public void basicTest(){
         String[] pat = {"comp","like"};
         String txt = "I like computer science";
+        long start = System.currentTimeMillis();
         RabinKarp rc = new RabinKarp(pat);
         assertEquals(2,rc.search(txt));
+        long stop = System.currentTimeMillis();
+        System.out.println(stop-start);
     }
 
 
@@ -34,8 +37,11 @@ public class RabinKarpTest {
                 " humanité ?, eh ben je leur réponds très simplement, je leur dis que c'est ce goût de l'amour, ce goût donc" +
                 " qui m'a poussé aujourd'hui à entreprendre une construction mécanique, mais demain, qui sait," +
                 " peut-être seulement à me mettre au service de la communauté, à faire le don, le don de soi...";
+        long start = System.currentTimeMillis();
         RabinKarp rc = new RabinKarp(pat);
         assertEquals(txt.length(),rc.search(txt));
+        long stop = System.currentTimeMillis();
+        System.out.println(stop-start);
     }
 
 
@@ -67,8 +73,11 @@ public class RabinKarpTest {
             pat[i] = txt.substring(startIndex,startIndex+length);
             minIndex = min(minIndex,startIndex);
         }
+        long start = System.currentTimeMillis();
         RabinKarp rc = new RabinKarp(pat);
         assertEquals(minIndex,rc.search(txt));
+        long stop = System.currentTimeMillis();
+        System.out.println(stop-start);
     }
 
 

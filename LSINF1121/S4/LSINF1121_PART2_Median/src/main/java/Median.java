@@ -1,3 +1,5 @@
+package S4.LSINF1121_PART2_Median.src.main.java;
+
 import java.util.Arrays;
 
 public class Median {

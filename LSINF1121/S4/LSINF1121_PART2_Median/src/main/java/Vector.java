@@ -1,9 +1,11 @@
+package S4.LSINF1121_PART2_Median.src.main.java;
+
 public class Vector {
 
     private int [] array;
     private int nOp = 0;
 
-    Vector(int n) {
+    public Vector(int n) {
         array = new int[n];
     }
 
