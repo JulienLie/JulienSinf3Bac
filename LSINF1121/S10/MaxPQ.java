@@ -67,46 +67,16 @@ public class MaxPQ<Key extends Comparable<Key>> {
 
     public static void main(String[] args){
         MaxPQ<Integer> pq = new MaxPQ<>(100);
-        pq.insert(97);
-        pq.insert(93);
-        pq.insert(89);
-        pq.insert(83);
-        pq.insert(38);
-        pq.insert(32);
-        pq.insert(40);
-        pq.insert(32);
-        pq.insert(40);
-        pq.insert(12);
-        pq.insert(26);
-        pq.insert(24);
+        pq.insert(5);
+        pq.insert(1);
+        pq.insert(9);
+        pq.insert(3);
         System.out.println(pq);
-        pq.insert(48);
+        pq.insert(8);
         System.out.println(pq);
-        pq.insert(30);
+        pq.insert(6);
         System.out.println(pq);
-        pq.insert(84);
+        pq.insert(4);
         System.out.println(pq);
-
-        System.out.println();
-
-        pq = new MaxPQ<>(100);
-        pq.insert(97);
-        pq.insert(93);
-        pq.insert(89);
-        pq.insert(83);
-        pq.insert(38);
-        pq.insert(32);
-        pq.insert(40);
-        pq.insert(32);
-        pq.insert(40);
-        pq.insert(12);
-        pq.insert(26);
-        pq.insert(24);
-        System.out.println(pq);
-        pq.delMax();
-        System.out.println(pq);
-        pq.delMax();
-        System.out.println(pq);
-        pq.delMax();
     }
 }

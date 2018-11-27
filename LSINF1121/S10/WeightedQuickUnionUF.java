@@ -55,23 +55,23 @@ public class WeightedQuickUnionUF {
 
     public static void main(String[] args){
         WeightedQuickUnionUF uf = new WeightedQuickUnionUF(10);
-        uf.union(4, 6);
+        uf.union(9, 1);
         System.out.println(uf);
-        uf.union(3, 6);
+        uf.union(8, 3);
         System.out.println(uf);
-        uf.union(8, 9);
+        uf.union(0, 1);
         System.out.println(uf);
-        uf.union(7, 0);
-        System.out.println(uf);
-        uf.union(1, 2);
-        System.out.println(uf);
-        uf.union(8, 4);
-        System.out.println(uf);
-        uf.union(6, 5);
-        System.out.println(uf);
-        uf.union(1, 7);
-        System.out.println(uf);
-        uf.union(6, 0);
-        System.out.println(uf);
+//        uf.union(7, 0);
+//        System.out.println(uf);
+//        uf.union(1, 2);
+//        System.out.println(uf);
+//        uf.union(8, 4);
+//        System.out.println(uf);
+//        uf.union(6, 5);
+//        System.out.println(uf);
+//        uf.union(1, 7);
+//        System.out.println(uf);
+//        uf.union(6, 0);
+//        System.out.println(uf);
     }
 }
