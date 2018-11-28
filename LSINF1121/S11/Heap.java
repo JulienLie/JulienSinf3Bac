@@ -35,7 +35,6 @@ public class Heap {
      * @param val value to add
      */
     public void push(int val) {
-        //TODO
         //operation on this.content.
         //use increaseSize() if needed.
         if(++size >= content.length) increaseSize();
