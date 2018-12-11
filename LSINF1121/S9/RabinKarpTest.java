@@ -1,5 +1,6 @@
 package S9;
 
+import S9.RabinKarp;
 import org.junit.Test;
 
 import java.util.Random;
@@ -14,11 +15,8 @@ public class RabinKarpTest {
     public void basicTest(){
         String[] pat = {"comp","like"};
         String txt = "I like computer science";
-        long start = System.currentTimeMillis();
         RabinKarp rc = new RabinKarp(pat);
         assertEquals(2,rc.search(txt));
-        long stop = System.currentTimeMillis();
-        System.out.println(stop-start);
     }
 
 
@@ -37,11 +35,8 @@ public class RabinKarpTest {
                 " humanité ?, eh ben je leur réponds très simplement, je leur dis que c'est ce goût de l'amour, ce goût donc" +
                 " qui m'a poussé aujourd'hui à entreprendre une construction mécanique, mais demain, qui sait," +
                 " peut-être seulement à me mettre au service de la communauté, à faire le don, le don de soi...";
-        long start = System.currentTimeMillis();
         RabinKarp rc = new RabinKarp(pat);
         assertEquals(txt.length(),rc.search(txt));
-        long stop = System.currentTimeMillis();
-        System.out.println(stop-start);
     }
 
 
@@ -73,11 +68,47 @@ public class RabinKarpTest {
             pat[i] = txt.substring(startIndex,startIndex+length);
             minIndex = min(minIndex,startIndex);
         }
-        long start = System.currentTimeMillis();
         RabinKarp rc = new RabinKarp(pat);
         assertEquals(minIndex,rc.search(txt));
-        long stop = System.currentTimeMillis();
-        System.out.println(stop-start);
+    }
+
+
+    private int nChar = 26;
+    private int patSize = 3;
+    private String[] patterns = new String[(int)Math.pow(nChar,patSize)];
+    private int nPats = 0;
+    private void genAllWords(String prefix, int k) {
+        if (k == 0) {
+            this.patterns[nPats] = prefix;
+            this.nPats++;
+            return;
+        }
+
+        for (int i = 0; i < nChar; ++i) {
+            String newPrefix = prefix + (char)('a' + i);
+            genAllWords(newPrefix, k - 1);
+        }
+    }
+
+    @Test(timeout=40)
+    public void complexityTest(){
+        //long t0 = System.currentTimeMillis();
+        genAllWords("",patSize);
+        RabinKarp rc = new RabinKarp(this.patterns);
+
+        String txt = ""+
+                "Ra th er  t ha n  pu rs ui ng  m or e  so ph is ti ca te d  sk ip pi ng ,  th e  Ra bi n– Ka rp  a l"+
+                "g or it hm  s ee ks  t o  sp ee d  up  t he  t es ti ng  o f  eq ua li ty  o f  th e  pa tt er n  to"+
+                "  t he  s ub st ri ng s  in  t he  t ex t  by  u si ng  a  h as h  fu nc ti on .  A  ha sh  f un ct "+
+                "io n  is  a  f un ct io n  wh ic h  co nv er ts  e ve ry  s tr in g  in to  a  n um er ic  v al ue ,"+
+                "  ca ll ed  i ts  h as h  va lu e;  f or  e xa mp le ,  we  m ig ht  h av e  ha sh (h el lo )= 5.  T";
+
+        assertEquals(txt.length(),rc.search(txt));
+
+        //long t1 = System.currentTimeMillis();
+        //System.out.println("time constructor bis=:"+(t1-t0));
+
+
     }
 
 
