@@ -1,4 +1,4 @@
-package S11;
+package S12;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public abstract class GlobalWarming {
      */
     public static class Point {
 
-        final int x, y;
+        public final int x, y;
 
         public Point(int x, int y) {
             this.x = x;
@@ -26,7 +26,6 @@ public abstract class GlobalWarming {
     final int[][] altitude;
     final int waterLevel;
 
-
     /**
      * In the following, we assume that the points are connected to
      * horizontal or vertical neighbors but not to the diagonal ones
@@ -40,19 +39,14 @@ public abstract class GlobalWarming {
 
 
     /**
-     * An island is a connected components of safe points wrt to waterLevel
-     * @return the number of islands
-     */
-    public abstract int nbIslands();
-
-    /**
      *
-     * @param p1 a point with valid coordinates on altitude matrix
-     * @param p2 a point with valid coordinates on altitude matrix
-     * @return true if p1 and p2 are on the same island, that is both p1 and p2 are safe wrt waterLevel
-     *        and there exists a path (vertical/horizontal moves) from p1 to p2 using only safe positions
+     * @param p1 a safe point with valid coordinates on altitude matrix
+     * @param p2 a safe point (different from p1) with valid coordinates on altitude matrix
+     * @return the shortest simple path (vertical/horizontal moves) if any between from p1 to p2 using only vertical/horizontal moves on safe points.
+     *         an empty list if not path exists (i.e. p1 and p2 are not on the same island).
      */
-    public abstract boolean onSameIsland(Point p1, Point p2);
+    public abstract List<Point> shortestPath(Point p1, Point p2);
+
 
     public int nbSafePointsCorrect(int waterLevel) {
         int res = 0;
