@@ -1,0 +1,8 @@
+#! /bin/bash
+
+read salutation < "/dev/stdin"
+echo "- Heu... $salutation, sais-tu où on est ? Je suis un peu perdu...
+Pour lui indiquer le lieu où vous vous trouvez, utilisez la commande pwd(1).
+Limitez le chemin à l'enceinte du batiment, il doit donc commencer par \"Reaumur/\". Dites-lui le chemin ainsi obtenu."
+rm Inconnu
+cp ../../../.ressources/Inconnu/Inconnu2 Inconnu

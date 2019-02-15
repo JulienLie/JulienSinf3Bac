@@ -1,0 +1,7 @@
+#! /bin/bash
+
+echo "C'est cette fois-ci un assistant qui vous barre la route
+- Le Professeur Van Roy ne doit pas être dérangé pour seulement 2 élèves, il faudra revenir plus nombreux si vous voulez que je vous laisse passer
+Utilisez le commande cp(1) pour dupliquer Tim et créer Tim2.ami"
+rm .suite
+cp ../../.ressources/Couloir_g/.suite2 .suite

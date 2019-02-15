@@ -1,0 +1,15 @@
+#! /bin/bash
+
+
+if [ $# -eq 0 ]
+then
+	echo "Vous scrutez la salle et regardez les gens dedans, tapez 
+ls
+et rappelez ensuite avec le nombre de personne présente (sans vous) dans la salle."
+elif [ $1 -ne 5 ]
+then
+	echo "Il n'y a pas $1 personnes dans la salles"
+else
+	echo "L'inconnu attire votre attention, vous décidez d'aller engager la conversation avec lui. Pour cela tapez
+echo Bonjour | ./Inconnu"
+fi

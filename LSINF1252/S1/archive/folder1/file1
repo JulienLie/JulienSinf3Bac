@@ -1,0 +1,5 @@
+Maintenant vous devez sortir de ce dossier en tapant
+cd ..
+Et ensuite trouver et ouvrir le fichier suivant dans folder2 sans utiliser cd(1posix). Pour cela, utilisez
+ls folder2        # liste le contenu du répertoir folder2
+cat folder2/nom   # remplacez nom par le nom du fichier

@@ -1,0 +1,17 @@
+#! /bin/bash
+
+if [ -f Tom.ami ]
+then
+	echo "L'assistant vous laisse passer, vous arrivez devant le bureau du Professeur * . Sur la porte il y a un mot disant qu'il revient dans 15 minutes. Vous décidez de l'attendre et cherchez donc à tuer le temps. Pour cela, utiliser la commande 
+ps -e | grep TEMPS
+elle vous indiquera le PID (le premier nombre de la ligne) du processus auquel envoyer un signal (vous comprendrez (ou pas) ces concepts au fil du cours).
+Utilisez ensuite la commande kill(1) avec le PID ainsi trouvé pour tuer le temps.
+
+*Position du bureau non-contractuelle, si vous cherchez vraiment à le trouver, aucune idée d'où est ce bureau."
+	cp ../../.ressources/Couloir_g/TEMPS TEMPS
+	./TEMPS &
+	rm .suite
+	cp ../../.ressources/Couloir_g/.suite4 .suite
+else
+	echo "Tom.ami n'est pas là, recommencez."
+fi

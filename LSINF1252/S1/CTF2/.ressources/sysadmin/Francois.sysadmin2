@@ -1,0 +1,15 @@
+#! /bin/bash
+
+if [ -f boite.tar.gz ]
+then
+	echo "- Bien, merci pour la boite !
+Pendant que François vous remercie, un inconnu s'approche de vous sans rien dire. Comme il a l'air timide vous décidez de lui adresser vous-même la parole, dites-lui bonjour."
+	rm Francois.sysadmin
+	cp ../../../.ressources/sysadmin/Francois.sysadmin3 Francois.sysadmin
+	cp ../../../.ressources/Inconnu/Inconnu1 Inconnu
+
+	cd ../../../.ressources/script
+	./next systeminfocestgenial
+else
+	echo "- Mais où est la boite ? Ramène-la ici stp."
+fi

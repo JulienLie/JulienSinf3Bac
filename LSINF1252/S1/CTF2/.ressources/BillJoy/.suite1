@@ -1,0 +1,12 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]
+then
+	rm ../Intel/Inconnu
+	cp ../../../.ressources/Francois.sysadmin ../Intel/Francois.sysadmin
+	echo "Cherchez l'imprimante et mettez son nom (sans \".printer\") comme argument à .suite"
+else
+	echo "Essayez d'imprimer quelque chose en exécutant l'imprimante (./leNomCompletDeLImprimante) et rappelez .suite ensuite"
+	rm .suite
+	cp ../../../.ressources/BillJoy/.suite2 .suite
+fi

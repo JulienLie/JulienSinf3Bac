@@ -1,0 +1,13 @@
+#! /bin/bash
+
+nb=$(ls | wc -l)
+if [ $nb -eq 6 ]
+then
+	touch Pierre.tuteur Paul.tuteur Jacques.tuteur Jean-Martin.tuteur
+	echo "Ces tuteurs se dupliquent à une vitesse folle, vous les avez réduit à 2, ils sont maintenant 4, une vraie mitose, pire que des lapins. Au lieu de spécifier un tuteur à faire disparaitre, utilisez *.tuteur comme argument de rm(1) pour tous les faire disparaitre d'un coup."
+	rm .suite
+	cp ../.ressources/Reaumur/.suite4 .suite
+else
+	touch Pierre.tuteur Paul.tuteur Jacques.tuteur
+	echo "Il ne devrait rester que 2 tuteurs, recommencez."
+fi

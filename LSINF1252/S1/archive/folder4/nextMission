@@ -1,0 +1,9 @@
+#!/bin/bash
+
+i=$(cat "$(dirname "${BASH_SOURCE[0]}")"/numberOfBytes)
+if [ $i == 59 ]
+then
+	echo "Bien, maintenant allez dans le folder5 et executez mission"
+else
+	echo "Vous n'avez pas le bon nombre de bytes !"
+fi

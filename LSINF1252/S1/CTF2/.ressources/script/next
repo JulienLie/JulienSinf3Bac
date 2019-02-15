@@ -1,0 +1,6 @@
+#! /bin/bash
+#$1 le nouveau code # n'existe plus, trace pour des raisons historiques
+
+last=$(cat hash)
+echo $last | sha256sum > hash
+

@@ -1,0 +1,11 @@
+#! /bin/bash
+
+read lieu < "/dev/stdin"
+if [ "$lieu" == "Reaumur/Couloir_de_droite/Intel" ]
+then
+	echo "- Ha oui merci, à la prochaine !
+Vous retournez parler à Francois."
+	rm Inconnu
+else
+	echo "Tu es sûr qu'on est là ?"
+fi

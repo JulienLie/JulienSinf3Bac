@@ -1,0 +1,17 @@
+#! /bin/bash
+
+if [[ ! ( -f boite.tar || -f boite.tar.gz ) ]]
+then
+	echo "Utilisez
+tar cvf boite.tar HDD1 Ventilateur Boitier
+pour ranger les éléments dans la boite."
+elif [[ -f boite.tar && ! ( -f boite.tar.gz ) ]]
+then
+	rm boite.tar
+	echo "Vous constatez que bourrer le matériel dans la boite ne permet pas de tout ranger dedans. Vous sortez donc tout et le re-rangez méthodiquement pour minimiser l'espace pris. Pour cela utilisez la commande
+tar zcvf boite.tar.gz HDD1 Ventilateur Boitier
+cela aurait été équivalent à utiliser la commande gzip(1) sur le tar."
+elif [[ ! ( -f boite.tar ) &&  -f boite.tar.gz ]]
+then
+	echo "Bien, maintenant ramenez la boite à François. Pour cela il vous faut la bouger, utilisez la commande mv(1) et retournez en salle Intel parler à François."
+fi

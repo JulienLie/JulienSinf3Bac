@@ -1,0 +1,5 @@
+Quel est le nombre de *bytes* dans folder3/zqdspz/mptcp/fileWithChar ? Pour le savoir, utilisez wc(1).
+Attention, pour afficher le nombre de bytes dans un fichier, vous devez utiliser un paramètre spécifique. Tapez
+man wc
+pour savoir comment wc(1) fonctionne.
+L'instruction suivante est dans le fichier folder4/mission.

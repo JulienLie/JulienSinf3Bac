@@ -1,0 +1,13 @@
+#! /bin/bash
+
+nb=$(ls | wc -l)
+if [ $nb -eq 4 ]
+then
+	echo "Vous allez tous les trois dans le couloir de gauche"
+	mv Tim.ami Couloir_de_gauche/Tim.ami
+	mv Francois.sysadmin Couloir_de_gauche/Francois.sysadmin
+	cp ../.ressources/Couloir_g/.suite1 Couloir_de_gauche/.suite
+else
+	touch Pierre.tuteur Paul.tuteur Jacques.tuteur Jean-Martin.tuteur
+	echo "Il ne devrait plus rester de tuteurs, recommencez."
+fi

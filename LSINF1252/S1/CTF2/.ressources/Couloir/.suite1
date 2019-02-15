@@ -1,0 +1,14 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]
+then
+	echo "Ce couloir donne sur plusieurs salles vous le parcourez et regardez leurs différents noms. Pour cela tapez
+ls -d */
+et rappelez .suite avec comme argument le nombre de salle que vous comptez
+(\"./.suite x\", x le nombre de salle)."
+elif [ $1 -ne 3 ]
+then
+	echo "Il n'y a pas $1 salles"
+else
+	echo "Le nom de salle Intel vous dit quelque chose, vous décidez de rentrer dans cette salle."
+fi

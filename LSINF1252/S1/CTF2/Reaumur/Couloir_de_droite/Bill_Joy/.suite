@@ -1,0 +1,5 @@
+#! /bin/bash
+
+echo "Vous constatez que l'imprimante est éteinte. Pour l'allumer utilisez la commande
+chmod +x studlp.printer
+qui la rendra exécutable. Lancez-la ensuite."

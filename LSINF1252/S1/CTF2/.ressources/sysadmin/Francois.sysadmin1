@@ -1,0 +1,14 @@
+#! /bin/bash
+
+read param < "/dev/stdin"
+if [ "$param" == "OK" ]
+then
+	echo "- Parfait, maintenant j'aurais besoin que tu ranges du matériel pour moi en salle Siemens. Rends-toi y, tu y verras des pièces de PC, mets-les dans une boite et apporte-les moi."
+	rm Francois.sysadmin
+	cp ../../../.ressources/sysadmin/Francois.sysadmin2 Francois.sysadmin
+
+	cd ../../../.ressources/script
+	./next oboroxx
+else
+	echo "Relisez les dernières consignes, cette action ne suit pas le scénario."
+fi

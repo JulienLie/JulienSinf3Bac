@@ -1,0 +1,9 @@
+Maintenant vous allez apprendre à écrire dans un fichier. Il y a quelques éditeurs en ligne de commande. Un des plus facile d'utilisation est nano.
+Ici nous vous demandons d'ouvrir numberOfBytes, de l'éditer (remplacer le 0 par le nombre de bytes retourné par wc(1) à l'exercice précédent) et le sauvegarder.
+Pour cela, ouvrez-le avec
+nano numberOfBytes
+enregristrez avec ctrl+o puis entrée
+quittez avec ctrl+x.
+
+Pour exécuter un script ou un exécutable, vous devez taper ./cheminVersLExecutable
+Ici il y a un petit script, nextMission, qui vérifie que vous avez écrit la bonne réponse dans numberOfBytes. Exécutez-le depuis le folder4 pour obtenir la prochaine instruction.

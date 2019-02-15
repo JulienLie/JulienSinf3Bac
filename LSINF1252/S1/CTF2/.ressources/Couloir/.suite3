@@ -1,0 +1,8 @@
+#! /bin/bash
+
+echo "Vous êtes engagé dans le couloir quand vous apercevez quelqu'un qui y entre par l'autre côté. François vous informe
+- Mince, c'est mon patron, il ne faut pas qu'il me voit en dehors de la salle Intel tant que je n'ai pas fini, cachons-nous !
+Il se dirige vers les toilettes au milieu du couloir, mais elles ne sont pas là. Utilisez la commande mkdir(1) pour créer une pièce appelée \"Toilettes\" puis dites \"Viens\" à Francois pour qu'il puisse se cacher."
+rm Francois.sysadmin
+cp ../../.ressources/sysadmin/Francois.sysadmin5 Francois.sysadmin
+rm .suite

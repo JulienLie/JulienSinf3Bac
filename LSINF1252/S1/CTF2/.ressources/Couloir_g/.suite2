@@ -1,0 +1,12 @@
+#! /bin/bash
+
+if [ -f Tim2.ami ]
+then
+	echo "L'assistant n'est pas convaincu
+- Ça ne sert à rien de dupliquer ton ami, je ne vous laisserai pas passer, je veux des personnes différentes !
+Vous décidez donc de créer un nouvel ami de toute pièce, pour cela utilisez la commande touch(1), appelez-le Tom.ami"
+	rm .suite
+	cp ../../.ressources/Couloir_g/.suite3 .suite
+else
+	echo "Tim2.ami n'est pas là, recommencez."
+fi

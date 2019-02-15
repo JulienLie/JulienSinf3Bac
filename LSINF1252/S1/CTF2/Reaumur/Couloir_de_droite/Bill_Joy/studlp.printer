@@ -1,0 +1,3 @@
+#! /bin/bash
+
+echo "Retournez dire \"OK\" à François en salle Intel."

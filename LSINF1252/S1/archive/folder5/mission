@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]
+then
+	echo "Vous pouvez donner des arguments à un exécutable : vous devez juste les séparer par un espace. Ici, écrivez
+./mission next
+pour avoir la suite des instructions"
+else
+	rep=$(echo "$1" | sha256sum)
+	if [ $1 == next ]
+	then
+		echo "grep(1) cherche dans les fichiers passés en arguments les lignes contenant le PATTERN donné.
+Cherchez la ligne contenant \"lsinf1252\" dans le fichier lorem.
+Ensuite, appelez ce script avec le mot de passe comme seul argument."
+	elif [ "$rep"=="0af22b2537499e98561ab1bbce48e75d0a1c7510dde123d733d31f74ee2389af - " ]
+	then
+		echo -e "Félicitation, vous avez réussi le CTF !\nPour générer le code à entrer sur inginious, saisissez votre *pseudo inginious* et pressez entrée"
+		read pseudo < "/dev/stdin"
+		echo "Le code a fournir à inginious est : "
+		g++ main.cpp -o chiffre
+		./chiffre $pseudo $1
+	else
+		echo "Vous n'avez pas respecté les instructions, rtfm noob !"
+	fi
+fi

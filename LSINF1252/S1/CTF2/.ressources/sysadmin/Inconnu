@@ -1,0 +1,8 @@
+#! /bin/bash
+
+read salutation < "/dev/stdin"
+echo "- $salutation ! Je m'appelle François, je suis étudiant sysadmin. Si tu as un problème avec les ordinateurs de la salle c'est moi ou mon collègue que tu dois contacter.
+Vous parlez un peu et il veut bien vous aider à trouver le Professeur Van Roy. Mais il a du boulot, vous décidez donc de l'aider dans son travail pour qu'il soit plus vite disponnible.
+L'imprimante de la salle Bill Joy ne fonctionne plus, il vous envoie la réparer. Déplacez-vous jusque là et demandez la suite."
+rm ../.suite
+cp ../../../.ressources/Couloir/.suite2 ../.suite

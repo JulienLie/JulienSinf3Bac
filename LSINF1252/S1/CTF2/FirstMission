@@ -1,0 +1,4 @@
+Chaque fois que vous vous retrouvez sans mission, tapez ./.suite n'essayez pas de deviner ce qu'il faut faire, ./.suite n'est pas un indice mais un appel au narrateur obligatoire pour le bon déroulement de l'histoire.
+Durant ce CTF vous allez utiliser certaines commandes, à de nombreuses reprises, vous devrez chercher vous-même leur fonctionnement. Pour cela, lisez les manpages de ces commandes via la commande "man nomDeLUtilitaireSansLesParenthèses".
+
+Attendant toujours les résultats de votre examen d'Oz, vous décidez de prendre les devants et d'aller les demander vous-même au Professeur Peter Van Roy. Vous savez que les bureaux des professeurs se trouvent dans le batiment Réaumur, bordant la place Sainte-Barbe. Vous vous y rendez donc. Pour cela, ouvrez une console dans le dossier où se trouve cette consigne et tapez "cd Reaumur" suivi de "./.suite" pour avoir la suite.

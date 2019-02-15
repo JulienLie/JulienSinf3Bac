@@ -1,0 +1,23 @@
+Dans cet exercice vous allez découvrir le monde merveilleux de la ligne de commande.
+Pour cela, veillez à n'utiliser que le terminal pour cet exercice. Il est interdit d'utiliser d'autres ressources, telles que l'explorateur de fichier.
+Pour commencer, vous allez apprendre à utiliser cd(1posix), ls(1) et cat(1).
+cd(1posix) est utilisé pour changer le répertoire courant. (Vous pouvez obtenir le répertoire courant avec pwd(1).)
+Exemples :
+—  cd chemin  : change le répertoire courant par celui de “chemin”.
+—  cd         : change le répertoire courant par le répertoire de login de l’utilisateur courant.
+—  cd ..      : remonte dans le répertoire prédécesseur dans l’arborescence des fichiers.
+
+ls(1) liste le contenu du répertoire.
+Exemples :
+—  ls         : affiche la liste du contenu du répertoire courant.
+—  ls chemin  : affiche la liste du contenu du répertoire indiqué dans "chemin".
+
+cat(1) concatène les fichiers et les affiches sur le sortie standard.
+Exemples :
+—  cat ficher : affiche le contenur du fichier "fichier".
+
+Pour la permière étape de cet exercice, vous devez lire le fichier dans le répertoire folder1. Pour cela, ouvrez un terminal et écrivez
+# le croisillon indique un commentaire
+cd folder1 # va dans le répertoire folder1
+ls         # liste les fichiers dans folder1, il n'y en a qu'un, affichez son contenu à l'écran
+cat nom    # l'instruction suivante s'affichera

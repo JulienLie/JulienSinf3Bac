@@ -1,0 +1,6 @@
+#! /bin/bash
+
+touch Pierre.tuteur Paul.tuteur Jacques.tuteur
+echo "Trois tuteurs vous barrent la route, utilisez la commande rm(1) pour en faire disparaitre un."
+rm .suite
+cp ../.ressources/Reaumur/.suite3 .suite

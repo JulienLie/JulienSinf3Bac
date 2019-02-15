@@ -1,0 +1,15 @@
+#! /bin/bash
+
+if [ -f Inconnu ]
+then
+	echo "Tu n'as pas fini ta discussion avec l'autre personne, termine-la."
+else
+	echo "- J'ai fini presque tout ce que je devais faire, je peux laisser le reste comme ça, pour le moment, je vais t'accompagner, suis-moi dans le couloir."
+	rm Francois.sysadmin
+	cp ../../../.ressources/sysadmin/Francois.sysadmin4 ../Francois.sysadmin
+	rm ../.suite
+	cp ../../../.ressources/Couloir/.suite3 ../.suite
+
+	cd ../../../.ressources/script
+	./next batman
+fi

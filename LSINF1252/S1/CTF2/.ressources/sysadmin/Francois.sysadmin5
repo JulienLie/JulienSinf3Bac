@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo "Francois vous suit dans le hall des toilettes, attend que son patron passe et en ressort avec vous. Vous avancez vers le hall du Reaumur et il en profite pour vous faire la visite
+- Ici c'est la salle Parnas, elle est réservée aux mémorants, tu n'as donc pas le droit d'y aller.
+Pour vérifier qu'effectivement, vous n'avez pas le droit d'y aller, essayez d'y rentrer. Ensuite, tapez la commande
+ls -l
+et constatez que vous n'avez pas les mêmes droits (première colonne, les suites de lettres bizarres) que pour les autres salles. Vous comprendrez plus tard la signification exacte de ceci.
+
+Vous croisez un ami, Tim, lui aussi aimerait bien ses points de Oz, il décide de vous accompagner voir le Professeur Van Roy. Sortez du couloir avec votre ami et Francois."
+rm Francois.sysadmin
+touch ../Francois.sysadmin
+touch ../Tim.ami
+rm ../.suite
+cp ../../.ressources/Reaumur/.suite2 ../.suite
+
+cd ../../.ressources/script
+./next bisounours
